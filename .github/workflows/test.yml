@@ -3,6 +3,7 @@ name: Tagging workflow.
 on:
   push:
     branches:
+      - main
       - develop
       - master
       - release
@@ -16,3 +17,4 @@ jobs:
       - uses: MumeiShashinka/ghatest/actions/tag-deployment@develop
         with:
           suffix: ''
+          dev-branch: main
